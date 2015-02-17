@@ -13,7 +13,7 @@ for full details.
 
 The data used for the present analysis was downloaded from
 
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 The original data were randomly partitioned into two sets, "train" and
 "test".  In each dataset there are three data files:
@@ -22,7 +22,7 @@ The original data were randomly partitioned into two sets, "train" and
 2. y_{train, test}.txt: Integer labels for WALKING, etc.
 3. subject_{train, test}.txt: Integer subjects identifiers.
 
-## Tidy Dataset 1 ("uci-har-tidy.txt")
+## Tidy Dataset 1
 
 This dataset merges the train and test data and selects only the
 mean() and std() features.
@@ -73,7 +73,7 @@ To create this dataset, the following operations were performed:
    they might appear as a substring of another word (e.g., "mean" in
    "meaning").
 
-## Tidy Dataset 2 ("uci-har-averages.txt")
+## Tidy Dataset 2
 
 This dataset computes mean values for the features according to
 (subject, activity) pairs.  The analysis was performed using the first
@@ -83,4 +83,7 @@ This dataset uses the same column order and names as the first
 dataset.  The feature values are means in groups defined by (subject,
 activity) pairs.  The units are therefore the same as those in the
 first dataset.
+
+This dataset is stored in "uci-har-averages.txt" by the
+"run_analysis.R" script.  The first line is a header line.
 

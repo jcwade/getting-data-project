@@ -1,4 +1,4 @@
-targets:=uci-har-tidy.txt uci-har-averages.txt
+targets:=uci-har-averages.txt
 
 all: $(targets)
 

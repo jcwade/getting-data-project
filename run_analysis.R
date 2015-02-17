@@ -1,7 +1,6 @@
 library(tools)
 
 dataset.zip <- "UCI HAR Dataset.zip"
-tidy.file <- "uci-har-tidy.txt"
 averages.file <- "uci-har-averages.txt"
 
 dataset.dir <- file_path_sans_ext(dataset.zip)
@@ -75,19 +74,18 @@ average.by.activity.and.subject <- function(f) {
         avgs[order(avgs$subject, avgs$activity), ]
 }
 
-main <- function() {
+run.analysis <- function() {
         training <- read.one.dataset("train")
         test <- read.one.dataset("test")
         combined <- rbind(training, test)
         tidy <- extract.mean.and.std(combined)
         avgs <- average.by.activity.and.subject(tidy)
 
-        write.table(tidy, tidy.file, row.names=FALSE)
         write.table(avgs, averages.file, row.names=FALSE)
 
-        list(tidy=tidy, avgs=avgs)
+        list(tidy=tidy, averages=avgs)
 }
 
 if (!interactive()) {
-        invisible(main())
+        invisible(run.analysis())
 }
